@@ -58,7 +58,12 @@ const Products = () => {
                   placeholder="Search"
                   className="focus:outline-none focus:ring-0"
                 />
-                <p>🔎</p>
+                <p
+                  onClick={() => handleSearch({ key: "Enter" })}
+                  className="cursor-pointer"
+                >
+                  🔎
+                </p>
               </div>
               <div
                 id="selectCategory"
