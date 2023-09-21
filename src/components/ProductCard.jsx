@@ -24,7 +24,7 @@ const ProductCard = ({ data }) => {
           </span>
           <br />
           <p>Brand: {brand}</p>
-          <p className="text-2xl">${price}</p>
+          <p className="text-2xl mt-3">${price}</p>
           <p className="text-green-600 ">{discountPercentage}% off</p>
         </div>
       </div>

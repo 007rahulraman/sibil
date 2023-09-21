@@ -1,6 +1,6 @@
 import { instance as axios } from "../axios/axios";
 
-export async function fetchProductList(setProductList) {
+export async function fetchProductList(setProductList, setLoading) {
   try {
     axios
       .get("/products.json")
@@ -12,6 +12,7 @@ export async function fetchProductList(setProductList) {
           );
           const jsonObject = JSON.parse(jsonResponseWithRegularSpaces);
           setProductList(jsonObject.products);
+          setLoading(false);
         }
       })
       .catch((error) => {
@@ -22,7 +23,12 @@ export async function fetchProductList(setProductList) {
   }
 }
 
-export async function fetchProductDetails(id, setProductDetails, setLoading) {
+export async function fetchProductDetails(
+  id,
+  setProductDetails,
+  setLoading,
+  navigate
+) {
   try {
     axios
       .get(`/products/${id}.json`)
@@ -38,6 +44,7 @@ export async function fetchProductDetails(id, setProductDetails, setLoading) {
         }
       })
       .catch((error) => {
+        navigate("*");
         console.log(error);
       });
   } catch (error) {
