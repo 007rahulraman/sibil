@@ -10,6 +10,16 @@
 8. Enable chrome extension "Allow CORS" from the chrome extension library.
 9. If step 6 doesn't work , the you can manually open your choice of browser and hit localhost:3000/ url.
 
+## Running Server-Side Rendering
+
+1. Open project directory
+2. Open terminal
+3. run - npm run build
+4. run - npm run ssr
+5. Once step 4 is completed you should be a message which says "App is launched"
+6. The server will be live a localhost:3001/
+7. The app should work as expected.
+
 ## Libraries used
 
 1. jotai for state management
