@@ -22,7 +22,7 @@ export async function fetchProductList(setProductList) {
   }
 }
 
-export async function fetchProductDetails(id, setProductDetails) {
+export async function fetchProductDetails(id, setProductDetails, setLoading) {
   try {
     axios
       .get(`/products/${id}.json`)
@@ -34,6 +34,7 @@ export async function fetchProductDetails(id, setProductDetails) {
           );
           const jsonObject = JSON.parse(jsonResponseWithRegularSpaces);
           setProductDetails(jsonObject);
+          setLoading(false);
         }
       })
       .catch((error) => {

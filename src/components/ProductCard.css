@@ -1,0 +1,7 @@
+.imageCard {
+  transition: transform 2000 ease-in;
+}
+
+.imageCard:hover img {
+  transform: scale(1.2);
+}
