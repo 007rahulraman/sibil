@@ -23,7 +23,6 @@ app.use("^/$", (req, res) => {
       data.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
     );
   });
-  // res.send("Server side");
 });
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
