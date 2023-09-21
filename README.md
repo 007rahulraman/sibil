@@ -6,4 +6,6 @@
 4. After all the packages are installed
 5. Then run - npm run start , to start a local server on your machine
 6. after the command has finished executing, You primary browser should automatically open with a new tab.
-7. If step 6 doesn't work , the you can manually open your choice of browser and hit localhost:3000/ url.
+7. Make sure to enable cors on the web browser while running the project in localhost.
+8. Enable chrome extension "Allow CORS" from the chrome extension library.
+9. If step 6 doesn't work , the you can manually open your choice of browser and hit localhost:3000/ url.

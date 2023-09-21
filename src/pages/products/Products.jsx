@@ -6,35 +6,41 @@ import ProductCard from "../../components/ProductCard";
 import Loader from "../../components/Loader";
 
 const Products = () => {
-  const [getProductList, setProductList] = useAtom(ProductList);
-  const [filterData, setFilterData] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [getProductList, setProductList] = useAtom(ProductList); //using atom to access the store and setting value in the ProductList state
+  const [filterData, setFilterData] = useState([]); // created state to store the searched output without affecting the original data
+  const [searchValue, setSearchValue] = useState(""); //state to store the input value which is being entered by the user
+  const [loading, setLoading] = useState(true); //state to wait for API call to finish to show loading animation until the api request is finished.
+
   useEffect(() => {
+    //Using useEffect hook to run this block of code when this page open, and make api call.
     fetchProductList(setProductList, setLoading);
   }, []);
 
   useEffect(() => {
-    setFilterData(getProductList);
+    setFilterData(getProductList); // storing the fetched product list from the api and storing in the search field data.
   }, [getProductList]);
 
   function handleSearch(event, value) {
+    //this function finds the products which are entered in the search field.
     if (event.key === "Enter") {
-      let result = getProductList.filter((item) =>
-        item.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
+      let result = getProductList.filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchValue.toLocaleLowerCase()) //using filter method to get the products which match to the search field value
       );
-      setFilterData(result);
+      setFilterData(result); // after we get he filtered data , we set the value to filterData state to update in the UI.
     }
   }
   function handleSelectChange(value) {
+    //this function help in filtering the categories to which the product belongs
     if (value === "Select") {
-      setFilterData(getProductList);
+      setFilterData(getProductList); //if the value of the select tag is Select then we need to set the list to the original product list.
     } else {
-      let result = getProductList.filter((item) => item.category === value);
-      setFilterData(result);
+      let result = getProductList.filter((item) => item.category === value); //once we select a particular category, we need to filter the product which belong to the particular category
+      setFilterData(result); // after getting the filtered result we set the state to update in the UI
     }
   }
   function getCategories() {
+    // function to get the categories present inside our product list.
     let categories = getProductList.map((item) => item.category);
     return [...new Set(categories)];
   }

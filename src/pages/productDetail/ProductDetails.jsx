@@ -7,17 +7,18 @@ import Loader from "../../components/Loader";
 import CustomButton from "../../components/CustomButton";
 
 const ProductDetails = () => {
-  const navigate = useNavigate();
-  const [productDetails, setProductDetails] = useState({});
-  const [itemCount, setItemCount] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  const navigate = useNavigate(); //using rhe useNavigate hook to navigate through the path which are defined in our app.
+  const [productDetails, setProductDetails] = useState({}); //declaring state to store the particular product details
+  const [itemCount, setItemCount] = useState(0); //to store the quantity of the product
+  const [loading, setLoading] = useState(true); //created state to show loader until the api call is completed
+  const { id } = useParams(); // useParams hooks helps us to get the params which are present the URL path.
 
   useEffect(() => {
-    fetchProductDetails(id, setProductDetails, setLoading, navigate);
+    fetchProductDetails(id, setProductDetails, setLoading, navigate); //fetching the particular product details.
   }, []);
 
   function handleButtonClick(type) {
+    //function to increment/decrement the count of the quantity state.
     if (type === "increment") {
       if (itemCount < productDetails.stock) setItemCount(itemCount + 1);
     } else {

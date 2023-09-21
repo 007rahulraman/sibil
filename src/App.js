@@ -8,13 +8,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-
+        <Route exact path="/products" element={<Products />} />{" "}
         {/* Redirect to /products by default */}
+        <Route path="/products/:id" element={<ProductDetails />} />
+        {/* Redirect to /products by default if use directly hit portal without any path*/}
         <Route path="/" element={<Navigate to="/products" />} />
+        {/* Redirect to /PageNotFound  path if the url which is not defined by default*/}
         <Route path="*" element={<PageNotFound />} />
-        {/* <Route path="/not-found" element={<Navigate to="/not-found" />} /> */}
       </Routes>
     </div>
   );
