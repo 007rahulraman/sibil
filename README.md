@@ -9,3 +9,15 @@
 7. Make sure to enable cors on the web browser while running the project in localhost.
 8. Enable chrome extension "Allow CORS" from the chrome extension library.
 9. If step 6 doesn't work , the you can manually open your choice of browser and hit localhost:3000/ url.
+
+## Libraries used
+
+1. jotai for state management
+2. TailwindCSS for adding styles/responsiveness
+3. axios for making api call
+4. react-image-carousel for showing the multiple images of a product
+
+## Some exception
+
+1. Some images are not available on the server, So some images might be seen as broken.
+2. This will show file not find error in the console.
