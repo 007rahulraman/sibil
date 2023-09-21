@@ -45,8 +45,8 @@ const Products = () => {
           <Loader />
         </div>
       ) : (
-        <div className="flex flex-col h-screen justify-center items-center">
-          <div id="actionHeader" className="m-10">
+        <div className="flex flex-col h-screen justify-center items-center overflow-scroll">
+          <div id="actionHeader" className="m-10 ">
             <h1 className="text-3xl text-center font-bold">Products</h1>
             <div className="flex gap-2 mt-4">
               <div className="flex items-center border-2 border-slate-700 rounded-md px-2 h-10">
