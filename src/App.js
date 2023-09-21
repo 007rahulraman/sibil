@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Products from "./pages/products/Products";
 import ProductDetails from "./pages/productDetail/ProductDetails";
