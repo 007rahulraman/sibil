@@ -20,9 +20,9 @@ const ProductDetails = () => {
   function handleButtonClick(type) {
     //function to increment/decrement the count of the quantity state.
     if (type === "increment") {
-      if (itemCount < productDetails.stock) setItemCount(itemCount + 1);
+      if (itemCount < productDetails.stock) setItemCount(itemCount + 1); //Not allowing use to add item more than the stock available.
     } else {
-      if (itemCount > 0) setItemCount(itemCount - 1);
+      if (itemCount > 0) setItemCount(itemCount - 1); //handling case for not getting the counter into negative values
     }
   }
   return (
