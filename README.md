@@ -2,7 +2,7 @@
 
 1. Open project directory
 2. Open terminal
-3. npm - npm run install
+3. run - npm run install
 4. run - npm run build
 5. run - npm run ssr
 6. Once step 4 is completed you should be a message which says "App is launched"
